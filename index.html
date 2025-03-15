@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madverse Clone</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABClJREFUWEe9V21MVWUYft7znXPhXrhcuHyJCKKCX4yCmebHtLlqOV0tV21Z/WiVP1pz2Wpr2Wpr9aO1Wj+yWbZWa7R+WGtlrZYfySxNU1KUQEUFRUEuIMhluHDhnnOe9pyLCuOe8x7u5f7jnPM+z/O+z/O+z/s+76GICE7CnPZRKLqGrJwc6JoGRVXhdPAzp2kghIBpmrAsC6ZpwjQMCMGHEBYsIcAwDQjLgmUJWMKCaVowTQHLFLCEgGkYEELANC1YQsA0TViGCcuyYAkByzRhWhYgBCxhwTQMWELANEwYhgHLFBCmgGUYsIQF0zRgGQZMw4RpGjANC8I0YVoWLMOEYZgQpgVhCQjDhGmYsCwLpmHCMk1YpgXTMGGZAqZpwTJMWIYJYZowDQumacEwTAjThDBMGKYFyzBhGiYsYUGYAoZhwTQtGIYBwzRhGQKmacIwTViGCcM0YRgGLMOEMAyYhgnTMGEYFizDhGVaMEwTpmHBMEwIw4RpWhCGCWEYMEwLpmHCNCwYhgnTsGAaFoRhwjQtGIYJYZgwDQuGYcE0TQjDhGlYMAzTXgHTMGEYFizDhDAMmIYF0zBgGhZMw4RpWjANC6ZhwjRMGIYJYVowDROmYcIyLQjDhGlYEKYJYZgwTQuGYcE0TAjDgmkYMAwLpmHCNCwYhgnTMGEaFizDhGFYMA0TpmHBMEwYhgXTMGEZFkzDhGmYsEwLpmHCMCyYhgnTsGAaJizDhGFYME0TpmHBNCwYhgnTMGEYFizDhGmYsAwLpmHCMEyYhgXTMGEaFizDhGVYMAwLpmHCNCwYhgnTsGAaJizDhGGYME0LhmHBNCyYhgnTsGAaJizDgmGYME0LhmHBNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAaJizDgmGYME0LhmHBNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGAaJizDgmGYME0LhmHBNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGCaJgzDgmlYMAwTpmHBNCwYhgnTsGAYJkzTgmFYMA0LpmHCNCwYhgnTsGCaJgzDgmlY+B9CZZkpqHoAyQAAAABJRU5ErkJggg==">
+    
+    <!-- Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#333333',
+                        accent: '#ff3366'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Submit Button Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn-submit:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Background Pattern */
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2%, transparent 0%),
+                radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.2) 2%, transparent 0%);
+            background-size: 100px 100px;
+        }
+        
+        /* Service Card Hover Effect */
+        .service-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -5px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold">
+                    MADVERSE
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-accent transition-colors">Home</a>
+                    <a href="#services" class="hover:text-accent transition-colors">Services</a>
+                    <a href="#about" class="hover:text-accent transition-colors">About</a>
+                    <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-pattern">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-3xl"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+                    Welcome to Madverse
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                    Transforming Ideas into Digital Reality
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#contact" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full hover:opacity-90 transition-opacity">
+                        Get Started
+                    </a>
+                    <a href="#services" class="border border-white/20 text-white px-8 py-3 rounded-full hover:bg-white/10 transition-colors">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-black/90">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+                Our Services
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card p-8 rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-white/10 hover:border-white/20 transition-all">
+                    <i class="fas fa-code text-4xl text-purple-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-400">Custom web solutions tailored to your business needs with cutting-edge technologies.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="service-card p-8 rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-white/10 hover:border-white/20 transition-all">
+                    <i class="fas fa-mobile-alt text-4xl text-purple-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Mobile Apps</h3>
+                    <p class="text-gray-400">Native and cross-platform mobile applications that deliver exceptional user experience.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="service-card p-8 rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-white/10 hover:border-white/20 transition-all">
+                    <i class="fas fa-paint-brush text-4xl text-purple-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+                    <p class="text-gray-400">Beautiful and intuitive designs that enhance user engagement and satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+                        About Madverse
+                    </h2>
+                    <p class="text-gray-300 mb-6">
+                        We are a team of passionate developers, designers, and creative thinkers dedicated to pushing the boundaries of digital innovation.
+                    </p>
+                    <p class="text-gray-300">
+                        Our mission is to help businesses thrive in the digital age by creating exceptional web experiences that drive growth and success.
+                    </p>
+                </div>
+                <div class="relative group">
+                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-white/10 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-6xl text-white/30"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black/90">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+                Get in Touch
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full px-6 py-4 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:outline-none text-white transition-all duration-300 hover:bg-white/10 focus:bg-white/10">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full px-6 py-4 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:outline-none text-white transition-all duration-300 hover:bg-white/10 focus:bg-white/10">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="5" class="w-full px-6 py-4 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 focus:outline-none text-white transition-all duration-300 hover:bg-white/10 focus:bg-white/10"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-lg hover:opacity-95 transition-all duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-xl font-bold mb-4 md:mb-0">
+                    MADVERSE
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 transform">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 transform">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 transform">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 mt-6">
+                &copy; 2024 Madverse. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black/95 backdrop-blur-lg z-50 hidden opacity-0 transition-opacity duration-300" id="mobile-menu">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex justify-end mb-8">
+                <button class="text-white" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6 text-center">
+                <a href="#home" class="text-2xl hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+                <a href="#services" class="text-2xl hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+                <a href="#about" class="text-2xl hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+                <a href="#contact" class="text-2xl hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.md\\:hidden').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.remove('hidden');
+            // Delay the opacity transition
+            setTimeout(() => {
+                mobileMenu.classList.add('opacity-100');
+            }, 10);
+        });
+
+        document.querySelectorAll('#mobile-menu a, #mobile-menu button').forEach(element => {
+            element.addEventListener('click', () => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.remove('opacity-100');
+                // Wait for the transition to complete before hiding
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
